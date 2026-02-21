@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "learning nodejs, express, mongodb",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yosefamr1/4-natours.git"
+  },
+  "author": "Youssef Ahmed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yosefamr1/4-natours/issues"
+  },
+  "homepage": "https://github.com/yosefamr1/4-natours#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
