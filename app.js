@@ -7,6 +7,7 @@ app.use(express.json()); // Middleware to parse JSON bodies
 
 const tours = JSON.parse(fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json`, 'utf-8'));
 
+//get request handler
 app.get(`/api/v1/tours`, (req, res) => {
     res.status(200).json({
         status: 'success',
@@ -16,8 +17,18 @@ app.get(`/api/v1/tours`, (req, res) => {
     })
 })
 
-app.post(`/api/v1/tours`, (req, res) => {
+//get request handler for specific tour
+app.get(`/api/v1/tours/:id`, (req, res) => {
+    const id = req.params.id;
+    const tour = tours.find(el => el.id === id * 1);
+    res.status(200).json({
+        status: 'success',
+        data: tour
+    })
+})
 
+//post request handler
+app.post(`/api/v1/tours`, (req, res) => {
     newId = tours[tours.length - 1].id + 1;
     newTour = Object.assign({ id: newId }, req.body);
     tours.push(newTour);
