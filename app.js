@@ -1,4 +1,3 @@
-const fs = require('fs');
 const express = require('express');
 
 const app = express();
@@ -11,7 +10,4 @@ const userRouter = require('./Routes/userRouts');
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
-const port = 3000;
-app.listen(port, () => {
-  console.log(`listening on port ${port}....`);
-});
+module.exports = app;
